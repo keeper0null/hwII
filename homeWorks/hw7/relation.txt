@@ -1,0 +1,39 @@
+[![](https://mermaid.ink/img/pako:eNqtVUFr2zAY_StC16SHXHMevYzBYLcRMIqtpiaxHRRntJRA6u22scJOY9B2G2PnLE1W06zJX5D_Ud8nx42ruelK54stf_qe3nvfJ-mIu5EneZNL9cwXHSWCVsjw9MVgIMOOVOwo_0GPH8abgON77OVz1uL6s57pub7OEp1m73Sqr_QE38tszPQKn8fZsZ7o3wiO9aTFN3BvhHL3hWKhCCTh_ADSWdWEgTyg-Lle6kU5TnxEx-R-QuySFsBySTFnlL9i3-3KuCykAM4jTjgM2lCaqzkF0h89J_a_IGaBz4R4M8sHtwcnKOEL5hiVTF9l4-wtki6rhbqi7YfWGmTWxyzJ3pcTQEgq32V7Qhl1P8lfPbEY3REpg7ZQXelVySxiVsmqC4ZXGb6qUKeoZ0oCQGqppxhdYzyvyF6Ta0dCeX7Ycah7_qUQdba7tRhbe7JIfmpflm3bfaRtI2sbOT0_7D6wl57K24Z0et3_hErknfiwLzdWfAfEimHyUs9oz1EbWOJvs2zdj4Qr18SkPtSHkDLNTrAL0xIj-1xr1NjODmtYvdkk3K9AvIAT4AFGqdnUKDvGJwXg-kxpGIxaFcg3UFpCCKiBT3o3_Xa3bgE4N27QYTIlVwqIvNmoWDOqYYH4l7Ca3XwG9EyvADs3vbCAR5DFjN9zwFJ7fLinCBZYwXtT4_vhk8ra8jrHIRcI38PtYxqkxeN9GcgWJygP_tDaI8wTwzh6dRi6vBmroazzYd8TsVzfV7y5J3oD_JWeH0fqRX6dmVutzvsifB1FxZzRDTrmLW4?type=png)](https://mermaid.live/edit#pako:eNqtVUFr2zAY_StC16SHXHMevYzBYLcRMIqtpiaxHRRntJRA6u22scJOY9B2G2PnLE1W06zJX5D_Ud8nx42ruelK54stf_qe3nvfJ-mIu5EneZNL9cwXHSWCVsjw9MVgIMOOVOwo_0GPH8abgON77OVz1uL6s57pub7OEp1m73Sqr_QE38tszPQKn8fZsZ7o3wiO9aTFN3BvhHL3hWKhCCTh_ADSWdWEgTyg-Lle6kU5TnxEx-R-QuySFsBySTFnlL9i3-3KuCykAM4jTjgM2lCaqzkF0h89J_a_IGaBz4R4M8sHtwcnKOEL5hiVTF9l4-wtki6rhbqi7YfWGmTWxyzJ3pcTQEgq32V7Qhl1P8lfPbEY3REpg7ZQXelVySxiVsmqC4ZXGb6qUKeoZ0oCQGqppxhdYzyvyF6Ta0dCeX7Ycah7_qUQdba7tRhbe7JIfmpflm3bfaRtI2sbOT0_7D6wl57K24Z0et3_hErknfiwLzdWfAfEimHyUs9oz1EbWOJvs2zdj4Qr18SkPtSHkDLNTrAL0xIj-1xr1NjODmtYvdkk3K9AvIAT4AFGqdnUKDvGJwXg-kxpGIxaFcg3UFpCCKiBT3o3_Xa3bgE4N27QYTIlVwqIvNmoWDOqYYH4l7Ca3XwG9EyvADs3vbCAR5DFjN9zwFJ7fLinCBZYwXtT4_vhk8ra8jrHIRcI38PtYxqkxeN9GcgWJygP_tDaI8wTwzh6dRi6vBmroazzYd8TsVzfV7y5J3oD_JWeH0fqRX6dmVutzvsifB1FxZzRDTrmLW4)
+
+erDiagram
+    passenger {
+        int passenger_id PK "Идентификатор пассажира"
+        varchar name "ФИО"
+        varchar sex "Пол"
+        int age "Возраст"
+    }
+    ticket {
+        varchar ticket_number PK "Номер билета" 
+        int pclass "Класс круиза"
+        varchar cabin "Номер каюты"
+        numeric fare "Цена билета"
+    }
+    embarked {
+        varchar embarked_id PK "Идетификатор порта"
+        varchar name "Наименование порта"
+    }
+    boarding_pass {
+        varchar ticket_number PK, FK "Номер билета"
+        int passenger_id PK, FK "Идентификатор пассажира"
+        varchar embarked_id FK "Идетификатор порта"
+    }
+    passenger_link {
+        int passenger_id PK, FK "Идентификатор пассажира"
+        int passenger_id_lk PK, FK "Идентификатор пассажира"
+        int link_type_id FK "Тип родства"
+    }
+    link_type {
+        int link_type_id PK "Тип родства"
+        varchar link_name "Наименование связи"
+    }
+
+    passenger 1+ -- 1 boarding_pass : "Регистрируется"
+    ticket 1 -- 1+ boarding_pass : "Соотносится"
+    embarked 1 -- 1+ boarding_pass : "Производится посадка"
+    passenger 1+ -- 1+ passenger_link : "Определяет степень родства"
+    passenger_link 1 -- 1+ link_type : "Определяет тип родства"

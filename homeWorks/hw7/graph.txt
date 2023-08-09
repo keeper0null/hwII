@@ -1,0 +1,35 @@
+[![](https://mermaid.ink/img/pako:eNqNk89KAzEQxl9lyEmhKy4tVRdv6qFgoaAgaDyE3bQNZpOSZMFSC7UePOhF8AX6BgXxqL7C7huZ7p-2K9viHkIy8-X7JZOdEfJlQJGHHMfBwjDDqQcnRBmqNHRJyPgQsEiTPidanzLSUyTEAuyXRqCtzpSg2txg1FZ7cMU4ZySELIjR7SgTA3SsmooeVa0APKgfuUVC03sPQsJpESA9e4p6M1uOyzB9HvmM05Sm_-JgJ8tCR_K73c3wg2ajBO_Sf-KZXuPbxR6sATfzGoXbZp7bqOIRbV8iv-MCma5Xt77sSyWMFNBqbYYf7te3V9p1l-hsUjwpHD84zqrm1iueJU_xTzKx40c8L9RFPpfnm8vqSudlORfi9_g7eU5eK4XrdciMX-Kvavw2z7Jym-nKpVr7lkzieTLN1aVsxTFm8WfymEwXe7BANRRSFRIW2L5L3wwj06chxciz04Ao-ydhMbY6Ehl5MRQ-8oyKaA1Fg4AYmjch8rqEaxulATNStbNGTvu5hgZEXEtZaMa_Yb1WmQ?type=png)](https://mermaid.live/edit#pako:eNqNk89KAzEQxl9lyEmhKy4tVRdv6qFgoaAgaDyE3bQNZpOSZMFSC7UePOhF8AX6BgXxqL7C7huZ7p-2K9viHkIy8-X7JZOdEfJlQJGHHMfBwjDDqQcnRBmqNHRJyPgQsEiTPidanzLSUyTEAuyXRqCtzpSg2txg1FZ7cMU4ZySELIjR7SgTA3SsmooeVa0APKgfuUVC03sPQsJpESA9e4p6M1uOyzB9HvmM05Sm_-JgJ8tCR_K73c3wg2ajBO_Sf-KZXuPbxR6sATfzGoXbZp7bqOIRbV8iv-MCma5Xt77sSyWMFNBqbYYf7te3V9p1l-hsUjwpHD84zqrm1iueJU_xTzKx40c8L9RFPpfnm8vqSudlORfi9_g7eU5eK4XrdciMX-Kvavw2z7Jym-nKpVr7lkzieTLN1aVsxTFm8WfymEwXe7BANRRSFRIW2L5L3wwj06chxciz04Ao-ydhMbY6Ehl5MRQ-8oyKaA1Fg4AYmjch8rqEaxulATNStbNGTvu5hgZEXEtZaMa_Yb1WmQ)
+
+---
+title: Carters family 
+---
+classDiagram
+    class MrErnest["Mr. William Ernest"]{
+      PassengerId : 391
+      sex: male
+      age: 36
+    }
+    class MrsLucile["Mrs. William Ernest (Lucile Polk)"]{
+      PassengerId : 764
+      sex: female
+      age: 36
+    }
+    class MissLucile["Miss. Lucile Polk"]{
+      PassengerId : 436
+      sex: female
+      age: 14
+    }
+    class MasterWilliam["Master. William Thornton II"]{
+      PassengerId : 803
+      sex: male
+      age: 11
+    }
+
+    MrErnest <|-- MrsLucile : Супруга
+    MrsLucile <|-- MrErnest : Супруг
+    MrErnest <|-- MissLucile : Дочь
+    MrErnest <|-- MasterWilliam : Сын
+    MrsLucile <|-- MissLucile : Дочь
+    MrsLucile <|-- MasterWilliam : Сын
+    MissLucile <|-- MasterWilliam : Брат
+    MasterWilliam <|-- MissLucile : Сестра

@@ -1,0 +1,18 @@
+[![](https://mermaid.ink/img/pako:eNp1Ub0OgyAQfhVzs74A6di1U7eGxJxytUQBgzAY67sXRa029hYu3w_fwQ1QGkHAoGyw664SK4uK6yRUYdAKqau8DUxyeWdZ4mRZk_tLTx3piuxfBakCbU0iCjb9qX2eaKcZIjxVTT37Mrlc7hv3xjjrrymiufaqWHMOrnXAzTe7VvQ86fDOo_EsDlJQZBVKEb59lnNwL1LEgYVWhCQOXE869M7ce10Cc9ZTCr4V6GjZErAnNl1ASUhn7G3Z43Sk0KJ-GLNqxg8406Gp?type=png)](https://mermaid.live/edit#pako:eNp1Ub0OgyAQfhVzs74A6di1U7eGxJxytUQBgzAY67sXRa029hYu3w_fwQ1QGkHAoGyw664SK4uK6yRUYdAKqau8DUxyeWdZ4mRZk_tLTx3piuxfBakCbU0iCjb9qX2eaKcZIjxVTT37Mrlc7hv3xjjrrymiufaqWHMOrnXAzTe7VvQ86fDOo_EsDlJQZBVKEb59lnNwL1LEgYVWhCQOXE869M7ce10Cc9ZTCr4V6GjZErAnNl1ASUhn7G3Z43Sk0KJ-GLNqxg8406Gp)
+classDiagram
+    boarding_pass <|-- ticket
+    boarding_pass <|-- passenger
+    boarding_pass <|-- embarked
+    passenger <|-- passenger
+    class passenger {
+        key: passenger_id
+    }
+    class ticket{
+        key: ticket_number
+    }
+    class embarked{
+      key: embarked_id
+    }
+    class boarding_pass{
+      key: ticket_number
+    }

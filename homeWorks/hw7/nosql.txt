@@ -1,0 +1,27 @@
+[![](https://mermaid.ink/img/pako:eNp1Uk0PgyAM_SumZ_cHzI677rTbYmIqdI4oxSAmW5z_ffiJZo4L9PX19RXoQBhJkICosGkuCguLOuXIr9yglYqLrPaZ6Pw5nSKnREnub3o4ERdk_zJI52hLkhNh5R-Wj442nG6Cd4WZkgFl1BSihl4hwGLO9FvtaZyN7gRk3Op8cTG2G-khFpgrDuED7ZH6MuuqvwAb08HyrnR3c2v9obujq_hp1EMMmqxGJf1Tj4IpuCf55pD4o_T0FFIeeNg6c3uzgMTZlmJoa4mO5p8ByQOrxqMklTP2Ov-dYYuhRr4bs3D6L9hlv7I?type=png)](https://mermaid.live/edit#pako:eNp1Uk0PgyAM_SumZ_cHzI677rTbYmIqdI4oxSAmW5z_ffiJZo4L9PX19RXoQBhJkICosGkuCguLOuXIr9yglYqLrPaZ6Pw5nSKnREnub3o4ERdk_zJI52hLkhNh5R-Wj442nG6Cd4WZkgFl1BSihl4hwGLO9FvtaZyN7gRk3Op8cTG2G-khFpgrDuED7ZH6MuuqvwAb08HyrnR3c2v9obujq_hp1EMMmqxGJf1Tj4IpuCf55pD4o_T0FFIeeNg6c3uzgMTZlmJoa4mO5p8ByQOrxqMklTP2Ov-dYYuhRr4bs3D6L9hlv7I)
+classDiagram
+    boarding_pass <|-- ticket
+    boarding_pass <|-- passenger
+    boarding_pass <|-- embarked
+    passenger <|-- passenger
+    class passenger {
+        passenger_id
+        name
+        sex
+        age
+    }
+    class ticket{
+        ticket_number
+        pclass
+        cabin
+        fare
+    }
+    class embarked{
+      embarked_id
+      name
+    }
+    class boarding_pass{
+      ticket_number
+      passenger_id
+      embarked_id
+    }

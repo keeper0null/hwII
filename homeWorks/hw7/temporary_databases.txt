@@ -1,0 +1,20 @@
+[![](https://mermaid.ink/img/pako:eNqtk8FKw0AQhl9l2avtodecvYkgeJNA2CRru7TZhM2mIKXQ1oMHwV48CfoMqVgtjcZXmH0jZ9OW2tZSERdCMpv5Z77Z2enRIA45dShXx4I1FYtcSXBpEbS5Jr2FZVeXqaDF1PKPJ7PI54qcnRCXwiOU8A5TMyAwgRkU-DmC3KVkLRdSkyTosDS1ggf0yc3QDAnMzcBco-jNCnbTBcwXcivHHLV3ZmRuV4L-4qV4qlmmmNSeZn6Hf8e3-avNfeRIM0KjQJT5Jspe9BImZggF4r-i6hly-ICZGW9RpVx1RcC9Nd0_cf2lI2u1FpEFihLi86aQXsg0t8p7rA5dCdaSmxusqbDGgVI3A3IZ7oYrEb-Ejypkpf3N-e3pa4PU66Rx9NPROjbpE3yaAUzhBZ_CjG3xq6DLi304wjYaxsBWIByt0YiriIkQx6bqpEt1i0fcpVYaMtW2yfroxzIdn1_JgDpaZbxGs8Qey3LQqHPJOinu8lDoWJ0u5rAaxxpNmLyI45VP_wvfJqS0?type=png)](https://mermaid.live/edit#pako:eNqtk8FKw0AQhl9l2avtodecvYkgeJNA2CRru7TZhM2mIKXQ1oMHwV48CfoMqVgtjcZXmH0jZ9OW2tZSERdCMpv5Z77Z2enRIA45dShXx4I1FYtcSXBpEbS5Jr2FZVeXqaDF1PKPJ7PI54qcnRCXwiOU8A5TMyAwgRkU-DmC3KVkLRdSkyTosDS1ggf0yc3QDAnMzcBco-jNCnbTBcwXcivHHLV3ZmRuV4L-4qV4qlmmmNSeZn6Hf8e3-avNfeRIM0KjQJT5Jspe9BImZggF4r-i6hly-ICZGW9RpVx1RcC9Nd0_cf2lI2u1FpEFihLi86aQXsg0t8p7rA5dCdaSmxusqbDGgVI3A3IZ7oYrEb-Ejypkpf3N-e3pa4PU66Rx9NPROjbpE3yaAUzhBZ_CjG3xq6DLi304wjYaxsBWIByt0YiriIkQx6bqpEt1i0fcpVYaMtW2yfroxzIdn1_JgDpaZbxGs8Qey3LQqHPJOinu8lDoWJ0u5rAaxxpNmLyI45VP_wvfJqS0)
+erDiagram
+    ticket {
+        varchar ticket_number PK "Номер билета" 
+        int pclass "Класс круиза"
+        varchar cabin "Номер каюты"
+    }
+    restaurant_table {
+        int table_number PK "Номер столика"
+        int pclass "Класс обслуживания"
+    }
+    service_restaurant {
+        int table_number PK "Номер столика"
+        varchar ticket_number PK "Номер билета"
+        timestamp begin_date "Дата начала обслуживания"
+        timestamp end_date "Дата окончания обслуживания"
+    }
+
+    restaurant_table 1 -- 1+ service_restaurant : "Определяет"
+    ticket 1 -- 1+ service_restaurant : "Обслуживается"
