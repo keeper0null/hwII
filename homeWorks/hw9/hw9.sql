@@ -152,7 +152,7 @@ select x.student_1
       ,x.city
   from (
         select s.name student_1
-              ,first_value(s.name) over (partition by s.city) student_2
+              ,first_value(s.name) over (partition by s.city order by s.name) student_2
               ,row_number() over (partition by s.city order by s.name) rn
               ,s.city 
           from student s) x
